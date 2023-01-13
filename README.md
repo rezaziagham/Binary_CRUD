@@ -17,3 +17,13 @@ The index file contains id and pointer, which is a two-bit id and a four-bit poi
 ### 1-3 non-clustered index
 At first, adding records and IDs are sorted in the file. But by successive additions and deletions of the index, it comes out in a random way (as shown in the figure below).
 ![non-clustered index](https://dataschool.com/assets/images/sql-optimization/how_to_index/indexToTable.png)
+
+## 2- Activity process
+### 1-2 - Indexing method
+The indexing of this project is consecutively from 0 to 255. In this way, whenever a record is to be added, the new id is equal to lasted+1 and its pointer is equal to the length of the entire record file. The record values, which are equal to 300 bits, are added to the end of the record file.
+
+## 2-2 How to delete a record
+First, it searches for the selected ID in the sorted list and finds its related pointer. This pointer indicates the start of the record in the record file
+
+## 2-3 how to add again in case of previous deletion
+If we have already deleted and want to add to a file again, the process of adding will change. The ID that should be added should actually be deleted. The consecutiveness of the ideas helps us that the subtraction of two consecutive ideas is always 1. With this principle, we can find the target values.
