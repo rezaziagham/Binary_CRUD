@@ -27,3 +27,12 @@ First, it searches for the selected ID in the sorted list and finds its related 
 
 ### 2-3 how to add again in case of previous deletion
 If we have already deleted and want to add to a file again, the process of adding will change. The ID that should be added should actually be deleted. The consecutiveness of the ideas helps us that the subtraction of two consecutive ideas is always 1. With this principle, we can find the target values.
+
+```
+[ 1,2,3,4,5,6]==> delete(3)==> [1,2,4,5,6]
+2-1=1                           2-1=1
+3-2=1                           4-2=2
+4-3=1                           5-4=1
+5-4=1                           6-5=1
+6-5=1
+```
